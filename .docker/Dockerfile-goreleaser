@@ -1,0 +1,6 @@
+FROM gcr.io/distroless/static-debian11:nonroot
+
+COPY --chown=nonroot:nonroot kinetic-cli /usr/bin/kinetic-cli
+
+ENTRYPOINT ["kinetic-cli"]
+CMD ["kinetic-cli"]
