@@ -1,9 +1,25 @@
 package main
 
-import "github.com/KineticCommerce/kinetic-cli/cmd"
+import (
+	"os"
 
-var BuildTime = "unset"
+	"github.com/KineticCommerce/kinetic-cli/internal/cmd"
+)
+
+var (
+	version string
+	commit  string
+	date    string
+	builtBy string
+)
 
 func main() {
-	cmd.Execute(BuildTime)
+	if exitCode := cmd.Main(cmd.VersionInfo{
+		Version: version,
+		Commit:  commit,
+		Date:    date,
+		BuiltBy: builtBy,
+	}, os.Args[1:]); exitCode != 0 {
+		os.Exit(exitCode)
+	}
 }
