@@ -3,7 +3,6 @@ package cmd
 import (
 	"io"
 	"log/slog"
-	"net/http"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -36,11 +35,10 @@ type Config struct {
 	wd      string
 	project kinetic.Project
 
-	httpClient *http.Client
-	logger     *slog.Logger
-	stderr     io.Writer
-	stdin      io.Reader
-	stdout     io.Writer
+	logger *slog.Logger
+	stderr io.Writer
+	stdin  io.Reader
+	stdout io.Writer
 }
 
 // A configOption sets and option on a Config.
@@ -65,6 +63,14 @@ func (c *Config) newRootCmd() (*cobra.Command, error) {
 		rootCmd.RegisterFlagCompletionFunc("environment", environmentTypeCompletionFunc),
 	); err != nil {
 		return nil, err
+	}
+
+	for _, cmd := range []*cobra.Command{
+		c.newStatusCmd(),
+	} {
+		if cmd != nil {
+			rootCmd.AddCommand(cmd)
+		}
 	}
 
 	return rootCmd, nil
