@@ -3,12 +3,11 @@ name: CI
 on:
   push:
     tags:
-      - "v*.*.*"
+      - 'v*.*.*'
     branches:
       - main
+
   pull_request:
-    branches:
-      - main
 
 env:
   GO_VERSION: '1.22'
@@ -30,13 +29,13 @@ jobs:
           go-version: ${{ env.GO_VERSION }}
 
       - name: Build
-        run: go build -v ./...
+        run: go build -v .
 
       - name: Test
         run: go test -race -coverprofile=coverage.out -covermode=atomic ./...
 
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4
+      # - name: Upload coverage reports to Codecov
+      #   uses: codecov/codecov-action@v4
 
   publish:
     needs: build
