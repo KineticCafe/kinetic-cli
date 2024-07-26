@@ -67,6 +67,7 @@ func (c *Config) newRootCmd() (*cobra.Command, error) {
 
 	for _, cmd := range []*cobra.Command{
 		c.newStatusCmd(),
+		c.newConfigCmd(),
 	} {
 		if cmd != nil {
 			rootCmd.AddCommand(cmd)
