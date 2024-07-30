@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/KineticCommerce/kinetic-cli/internal/cmd"
+	"github.com/KineticCafe/kinetic-cli/internal/cmd"
 )
 
 var (

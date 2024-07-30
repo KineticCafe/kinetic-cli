@@ -4,7 +4,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/KineticCommerce/kinetic-cli/internal/kinetic"
+	"github.com/KineticCafe/kinetic-cli/internal/kinetic"
 )
 
 type environmentType string

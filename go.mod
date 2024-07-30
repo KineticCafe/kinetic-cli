@@ -1,4 +1,4 @@
-module github.com/KineticCommerce/kinetic-cli
+module github.com/KineticCafe/kinetic-cli
 
 go 1.21.4
 

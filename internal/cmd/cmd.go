@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/KineticCommerce/kinetic-cli/internal/kinetic"
-	"github.com/KineticCommerce/kinetic-cli/internal/kineticset"
+	"github.com/KineticCafe/kinetic-cli/internal/kinetic"
+	"github.com/KineticCafe/kinetic-cli/internal/kineticset"
 )
 
 var deDuplicateErrorRx = regexp.MustCompile(`:\s+`)

@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/KineticCommerce/kinetic-cli/internal/kinetic"
-	"github.com/KineticCommerce/kinetic-cli/internal/kineticerrors"
+	"github.com/KineticCafe/kinetic-cli/internal/kinetic"
+	"github.com/KineticCafe/kinetic-cli/internal/kineticerrors"
 	"github.com/coreos/go-semver/semver"
 	"github.com/spf13/cobra"
 )
